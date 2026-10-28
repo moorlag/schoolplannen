@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Overzicht van verzamelde schoolplannen van Nederlandse scholen voor voortgezet onderwijs.">
+  <title>Schoolplannen VO Nederland</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav wrap" aria-label="Hoofdnavigatie">
+      <a class="brand" href="#top">Schoolplannen<span>VO</span></a>
+      <div class="nav-links"><a href="#regios">Regio's</a><a href="#provincies">Provincietabel</a><a href="#verantwoording">Verantwoording</a></div>
+    </nav>
+    <div class="wrap hero-grid" id="top">
+      <div>
+        <p class="eyebrow">Landelijk overzicht · voortgezet onderwijs</p>
+        <h1>Waar wil het Nederlandse onderwijs naartoe?</h1>
+        <p class="intro">Doorzoek schoolplannen per regio en provincie. Zie direct welke plannen actueel zijn, waar alleen een ouder plan beschikbaar is en waar nog een document ontbreekt.</p>
+      </div>
+      <div class="hero-mark" aria-hidden="true"><span>12</span><small>provincies</small></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap stats" aria-label="Kerncijfers">
+      <article><strong id="stat-total">—</strong><span>scholen in de dataset</span></article>
+      <article><strong id="stat-covered">—</strong><span>met lokaal gecontroleerd plan</span></article>
+      <article><strong id="stat-coverage">—</strong><span>totale dekkingsgraad</span></article>
+      <article><strong id="stat-current">—</strong><span>met actueel plan</span></article>
+    </section>
+
+    <section class="wrap explorer" id="regios">
+      <div class="section-head">
+        <div><p class="eyebrow">Regionale verkenning</p><h2>De verzameling per landsdeel</h2></div>
+        <p>Klik op een regio om de provincies en dekking te bekijken.</p>
+      </div>
+      <div class="region-grid" id="region-grid"></div>
+    </section>
+
+    <section class="table-section" id="provincies">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="eyebrow">Alle scholen</p><h2>Schoolplannen per provincie</h2></div>
+          <p>Filter, sorteer en open de officiële bron van ieder gevonden plan.</p>
+        </div>
+
+        <div class="toolbar">
+          <label class="search"><span>Zoeken</span><input id="search" type="search" placeholder="School, plaats of BRIN…"></label>
+          <label><span>Regio</span><select id="region-filter"><option value="">Alle regio's</option></select></label>
+          <label><span>Provincie</span><select id="province-filter"><option value="">Alle provincies</option></select></label>
+          <label><span>Status</span><select id="status-filter"><option value="">Alle statussen</option><option value="current">Actueel</option><option value="obsolete">Verlopen fallback</option><option value="annual">Jaarplan</option><option value="missing">Ontbreekt</option></select></label>
+        </div>
+
+        <div class="result-line"><strong id="result-count">—</strong><span> resultaten</span><button id="reset" type="button">Wis filters</button></div>
+        <div id="province-tables" class="province-tables"></div>
+      </div>
+    </section>
+
+    <section class="wrap methodology" id="verantwoording">
+      <div><p class="eyebrow">Leeswijzer</p><h2>Eén overzicht, vier duidelijke statussen</h2></div>
+      <div class="method-grid">
+        <article><span class="dot current"></span><h3>Actueel</h3><p>Een lokaal opgeslagen PDF, Word-document of volledig digitaal plan waarvan de looptijd nog geldig is.</p></article>
+        <article><span class="dot obsolete"></span><h3>Verlopen fallback</h3><p>Het nieuwste gevonden schoolplan, bewaard omdat geen recentere versie openbaar beschikbaar was.</p></article>
+        <article><span class="dot annual"></span><h3>Jaarplan</h3><p>Een jaarlijkse uitwerking. Deze wordt apart getoond en niet als volledig meerjarig schoolplan meegerekend.</p></article>
+        <article><span class="dot missing"></span><h3>Ontbreekt</h3><p>Nog geen controleerbaar lokaal plan. De website van de school blijft beschikbaar voor vervolgonderzoek.</p></article>
+      </div>
+      <p class="source-note">Bron: DUO-scholenlijst en de lokaal opgebouwde schoolplannendatabase. Documentlinks verwijzen naar de officiële publicatiebron wanneer die beschikbaar is.</p>
+    </section>
+  </main>
+
+  <footer><div class="wrap"><span>Schoolplannen VO Nederland</span><span id="generated-at"></span></div></footer>
+  <script src="app.js" defer></script>
+</body>
+</html>
